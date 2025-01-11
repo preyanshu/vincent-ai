@@ -1,0 +1,28 @@
+name: Checks
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch the full history instead of a shallow clone
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Yarn Install
+        run: yarn
+
+      - name: Build All Packages
+        run: yarn build:all
+
+      - name: Test
+        run: yarn test:all

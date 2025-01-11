@@ -1,0 +1,108 @@
+# @sei-js/create-sei-app
+
+## 0.0.4
+
+### Patch Changes
+
+- 848c236: Remove cosmos from templates
+
+## 0.0.3
+
+### Patch Changes
+
+- a64da08: Update README files in NPM
+
+## 0.0.2
+
+### Patch Changes
+
+- cd65a51: Fix broken NPM publish for all packages
+
+## 0.0.1
+
+### Patch Changes
+
+- d6e74ed: Update package structure and building of all @sei-js packages
+
+## 0.0.0
+
+### Major Changes
+
+- e3a4c8e: First release
+
+## 0.0.0-internal-20240718212746
+
+### Major Changes
+
+- test
+
+## 0.0.0-internal-20240718212405
+
+### Major Changes
+
+- test ver final
+
+## 0.0.0-internal-20240717005255
+
+### Major Changes
+
+- edit
+
+## 0.0.0-internal-20240717005002
+
+### Major Changes
+
+- with options
+
+## 0.0.0-internal-20240717003256
+
+### Major Changes
+
+- First version
+
+## 0.0.0-internal-20240716075531
+
+### Major Changes
+
+- first v
+
+## 0.0.0-internal-20240716074905
+
+### Major Changes
+
+- First version
+
+## 0.0.0-internal-20240708205128
+
+### Major Changes
+
+- first release
+
+## 0.0.0-internal-20240708184136
+
+### Major Changes
+
+- First release
+
+## 0.0.0-internal-20240708170805
+
+### Major Changes
+
+- release create sei
+
+## 0.0.0-internal-20240708163140
+
+### Major Changes
+
+- Update Templates
+- 0917789: Major release
+
+## 0.0.0-internal-20240701161539
+
+### Major Changes
+
+- 6b3cf5a: Instantiates the Create Sei App package
+
+### Minor Changes
+
+- changes

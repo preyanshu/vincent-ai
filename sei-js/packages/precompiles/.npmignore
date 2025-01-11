@@ -1,0 +1,9 @@
+src
+node_modules
+docs
+coverage/
+
+jest.config.ts
+tsconfig.json
+
+yarn-error.log
