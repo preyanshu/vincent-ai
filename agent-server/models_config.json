@@ -1,0 +1,56 @@
+
+
+
+{
+    "models": {
+      "gemini-1.5-flash": {
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+        "api_keys": [
+          "YOUR_GEMINI_API_KEY_HERE"
+        ],
+        "description": "Fast and efficient model for simple tasks",
+        "api_format": "chat_completion"
+      },
+      "gemini-2.5-flash": {
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+        "api_keys": [
+          "YOUR_GEMINI_API_KEY_HERE"
+        ],
+        "description": "Balanced performance model (default)",
+        "api_format": "chat_completion"
+      },
+      "gemini-2.5-pro": {
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+        "api_keys": [
+          "YOUR_GEMINI_API_KEY_HERE"
+        ],
+        "description": "Most capable model for complex analysis",
+        "api_format": "chat_completion"
+      },
+      "gemini-1.5-pro": {
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+        "api_keys": [
+          "YOUR_GEMINI_API_KEY_HERE"
+        ],
+        "description": "Pro version of 1.5 with enhanced capabilities",
+        "api_format": "chat_completion"
+      },
+      "qwen-3-235b": {
+        "base_url": "https://api.intelligence.io.solutions/api/v1",
+        "api_keys": [
+          "YOUR_QWEN_API_KEY_HERE"
+        ],
+        "description": "Qwen 3 235B A22B Thinking model for advanced reasoning",
+        "api_format": "chat_completion",
+        "model_name": "Qwen/Qwen3-235B-A22B-Thinking-2507"
+      }
+    },
+    "default_model": "gemini-2.5-flash",
+    "fallback_model": "gemini-1.5-flash",
+    "load_balancing": {
+      "enabled": true,
+      "strategy": "random",
+      "retry_on_failure": true,
+      "max_retries": 3
+    }
+  } 
