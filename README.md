@@ -23,15 +23,8 @@ This repository contains a comprehensive Sei blockchain development project with
 - Docker containerization support
 - Database integration for snapshots
 
-### 🔗 Sei.js (`/sei-js`)
-- **TypeScript** blockchain SDK
-- Multiple packages for different use cases:
-  - `@sei-js/ledger` - Ledger hardware wallet integration
-  - `@sei-js/precompiles` - EVM precompile support
-  - `@sei-js/registry` - Chain registry and network info
-  - `@sei-js/sei-global-wallet` - Global wallet connectivity
-  - `@sei-js/mcp-server` - MCP server implementation
-  - `@sei-js/create-sei` - Project scaffolding tools
+### 🔗 MCP SERVER (`/sei-js/packages/mcp-server`)
+- **TypeScript** = Modified and advanced implementation of base sei js mcp server
 
 ## Getting Started
 
