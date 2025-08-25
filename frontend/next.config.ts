@@ -1,22 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /* config options here */
   eslint: {
+    // Disable ESLint during build
     ignoreDuringBuilds: true,
   },
   typescript: {
+    // Disable TypeScript type checking during build
     ignoreBuildErrors: true,
-  },
-  // output: 'standalone',
-  // experimental: {
-  //   esmExternals: true,
-  // },
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': require('path').resolve(__dirname, 'src'),
-    };
-    return config;
   },
 };
 
