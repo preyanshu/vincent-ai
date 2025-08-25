@@ -102,6 +102,7 @@ export default function ChatInterface() {
       const response = await fetch(`${process.env.NEXT_PUBLIC_AGENT_SERVER_URL}/chat/stream`, {
         method: 'POST',
         headers: {
+          'ngrok-skip-browser-warning': 'true',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({

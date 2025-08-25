@@ -1110,7 +1110,13 @@ const JobsSection = () => {
   const fetchJobs = async () => {
     // setIsLoading(true);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/jobs`)
+      const response = await fetch(`${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/jobs`, {
+      method: 'GET',
+      headers: {
+        'ngrok-skip-browser-warning': 'true',
+        'Content-Type': 'application/json'
+      }
+    })
       if (response.ok) {
         const jobsData = await response.json()
         setJobs(jobsData.slice(0, 10)) // Show latest 10 jobs since we have more space
@@ -1310,7 +1316,13 @@ export default function ChatPage() {
     // setIsLoadingDashboard(true);
     try {
       // Fetch jobs data
-      const jobsResponse = await fetch(`${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/jobs`);
+      const jobsResponse = await fetch(`${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/jobs`, {
+      method: 'GET',
+      headers: {
+        'ngrok-skip-browser-warning': 'true',
+        'Content-Type': 'application/json'
+      }
+    });
       if (jobsResponse.ok) {
         const jobsData = await jobsResponse.json();
         
@@ -1330,7 +1342,13 @@ export default function ChatPage() {
       }
       
       // Fetch snapshot stats
-      const snapshotsResponse = await fetch(`${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/snapshots/stats`);
+      const snapshotsResponse = await fetch(`${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/snapshots/stats`, {
+      method: 'GET',
+      headers: {
+        'ngrok-skip-browser-warning': 'true',
+        'Content-Type': 'application/json'
+      }
+    });
       if (snapshotsResponse.ok) {
         const snapshotsData = await snapshotsResponse.json();
         if (snapshotsData.success) {
@@ -1897,6 +1915,7 @@ export default function ChatPage() {
       const response = await fetch(`${process.env.NEXT_PUBLIC_AGENT_SERVER_URL}/chat/stream`, {
         method: 'POST',
         headers: {
+          'ngrok-skip-browser-warning': 'true',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
