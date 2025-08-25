@@ -7,10 +7,10 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  output: 'standalone',
-  experimental: {
-    esmExternals: true,
-  },
+  // output: 'standalone',
+  // experimental: {
+  //   esmExternals: true,
+  // },
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
