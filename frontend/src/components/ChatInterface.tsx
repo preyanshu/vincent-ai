@@ -99,7 +99,7 @@ export default function ChatInterface() {
     setMessages(prev => [...prev, assistantMessage])
 
     try {
-      const response = await fetch('http://localhost:8000/chat/stream', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_AGENT_SERVER_URL}/chat/stream`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

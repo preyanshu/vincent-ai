@@ -1110,7 +1110,7 @@ const JobsSection = () => {
   const fetchJobs = async () => {
     // setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3000/jobs')
+      const response = await fetch(`${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/jobs`)
       if (response.ok) {
         const jobsData = await response.json()
         setJobs(jobsData.slice(0, 10)) // Show latest 10 jobs since we have more space
@@ -1138,14 +1138,14 @@ const JobsSection = () => {
       
       // Determine endpoint and address based on job action
       if (job.action === 'wallet_snapshot' && job.payload.wallet) {
-        endpoint = `http://localhost:3000/snapshots/wallet/${job.payload.wallet}`;
+        endpoint = `${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/snapshots/wallet/${job.payload.wallet}`;
         address = job.payload.wallet;
         console.log('📊 Wallet snapshot endpoint:', endpoint);
       } else if (job.action === 'analyze_nft_movements') {
         // Check multiple possible field names for NFT contract address
         const nftAddress = job.payload.collectionAddress || job.payload.tokenAddress || job.payload.nftAddress || job.payload.address;
         if (nftAddress) {
-          endpoint = `http://localhost:3000/snapshots/nft/${nftAddress}`;
+          endpoint = `${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/snapshots/nft/${nftAddress}`;
           address = nftAddress;
           console.log('🖼️ NFT snapshot endpoint:', endpoint, 'Address:', address);
         } else {
@@ -1154,7 +1154,7 @@ const JobsSection = () => {
           return;
         }
       } else if (job.action === 'analyze_coin_flows' && job.payload.tokenAddress) {
-        endpoint = `http://localhost:3000/snapshots/memecoin/${job.payload.tokenAddress}`;
+        endpoint = `${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/snapshots/memecoin/${job.payload.tokenAddress}`;
         address = job.payload.tokenAddress;
         console.log('🪙 Memecoin snapshot endpoint:', endpoint);
       } else {
@@ -1310,7 +1310,7 @@ export default function ChatPage() {
     // setIsLoadingDashboard(true);
     try {
       // Fetch jobs data
-      const jobsResponse = await fetch('http://localhost:3000/jobs');
+      const jobsResponse = await fetch(`${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/jobs`);
       if (jobsResponse.ok) {
         const jobsData = await jobsResponse.json();
         
@@ -1330,7 +1330,7 @@ export default function ChatPage() {
       }
       
       // Fetch snapshot stats
-      const snapshotsResponse = await fetch('http://localhost:3000/snapshots/stats');
+      const snapshotsResponse = await fetch(`${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/snapshots/stats`);
       if (snapshotsResponse.ok) {
         const snapshotsData = await snapshotsResponse.json();
         if (snapshotsData.success) {
@@ -1894,7 +1894,7 @@ export default function ChatPage() {
     setMessages(prev => [...prev, assistantMessage])
 
     try {
-      const response = await fetch('http://localhost:8000/chat/stream', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_AGENT_SERVER_URL}/chat/stream`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -2043,13 +2043,13 @@ export default function ChatPage() {
       
       // Determine endpoint and address based on job action
       if (job.action === 'wallet_snapshot' && job.payload.wallet) {
-        endpoint = `http://localhost:3000/snapshots/wallet/${job.payload.wallet}`;
+        endpoint = `${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/snapshots/wallet/${job.payload.wallet}`;
         address = job.payload.wallet;
       } else if (job.action === 'analyze_nft_movements') {
         // Check multiple possible field names for NFT contract address
         const nftAddress = job.payload.collectionAddress || job.payload.tokenAddress || job.payload.nftAddress || job.payload.address;
         if (nftAddress) {
-          endpoint = `http://localhost:3000/snapshots/nft/${nftAddress}`;
+          endpoint = `${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/snapshots/nft/${nftAddress}`;
           address = nftAddress;
           console.log('🖼️ NFT snapshot endpoint:', endpoint, 'Address:', address);
         } else {
@@ -2058,7 +2058,7 @@ export default function ChatPage() {
           return;
         }
       } else if (job.action === 'analyze_coin_flows' && job.payload.tokenAddress) {
-        endpoint = `http://localhost:3000/snapshots/memecoin/${job.payload.tokenAddress}`;
+        endpoint = `${process.env.NEXT_PUBLIC_JOB_RUNNER_URL}/snapshots/memecoin/${job.payload.tokenAddress}`;
         address = job.payload.tokenAddress;
         console.log('🪙 Memecoin snapshot endpoint:', endpoint);
       } else {
